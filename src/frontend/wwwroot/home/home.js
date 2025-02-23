@@ -85,7 +85,7 @@
         return;
       }
       const sessionId =
-        "sid_" + new Date().getTime() + "_" + Math.floor(Math.random() * 10000);
+        "sid_" + new Date().getTime() + "_" + window.crypto.getRandomValues(new Uint32Array(1))[0];
 
       newTaskPrompt.disabled = true;
       startTaskButton.disabled = true;
